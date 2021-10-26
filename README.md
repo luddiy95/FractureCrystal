@@ -1,3 +1,3 @@
 # FractureCrystal
 
-https://user-images.githubusercontent.com/38341359/138933409-93440b94-491c-4507-817b-66c77495f653.gif
+![movie_022](https://user-images.githubusercontent.com/38341359/138933983-f33f9bf4-342a-4c0f-8cc1-ed72e0a3d990.gif)
