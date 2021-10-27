@@ -48,8 +48,8 @@ namespace Project.Scripts.FractureCrystal
             mesh.SetVertices(
                 vertexPositionsCache.Select(
                     (pos, i) =>
-                        pos + MathUtil.Divide3D(vertexNormalsCache[i], localScale) *
-                        MathUtil.Voronoi(MathUtil.Multiply3D(pos, localScale), voronoiDensity, voronoiOffset) * extrusionFactor
+                        pos + MathUtil.Divide(vertexNormalsCache[i], localScale) *
+                        MathUtil.Voronoi(MathUtil.Multiply(pos, localScale), voronoiDensity, voronoiOffset) * extrusionFactor
                 ).ToArray()
             );
         }

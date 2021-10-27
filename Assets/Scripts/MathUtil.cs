@@ -11,8 +11,8 @@ namespace Project.Scripts
                 Vector3.Dot(pos, new Vector3(269.5f, 183.3f, 246.1f)),
                 Vector3.Dot(pos, new Vector3(113.5f, 271.9f, 124.6f))
             );
-            dot = Frac3D(new Vector3(Mathf.Sin(dot.x), Mathf.Sin(dot.y), Mathf.Sin(dot.z)) * 43758.5453123f);
-            return Frac3D(new Vector3(
+            dot = Frac(new Vector3(Mathf.Sin(dot.x), Mathf.Sin(dot.y), Mathf.Sin(dot.z)) * 43758.5453123f);
+            return Frac(new Vector3(
                 Mathf.Sin(dot.y * voronoiOffset) * 0.5f + 0.5f,
                 Mathf.Cos(dot.x * voronoiOffset) * 0.5f + 0.5f,
                 Mathf.Sin(dot.z * voronoiOffset) * 0.5f + 0.5f
@@ -21,8 +21,8 @@ namespace Project.Scripts
 
         public static float Voronoi(Vector3 pos, float voronoiDensity, float voronoiOffset)
         {
-            Vector3 p = Floor3D(pos * voronoiDensity);
-            Vector3 f = Frac3D(pos * voronoiDensity);
+            Vector3 p = Floor(pos * voronoiDensity);
+            Vector3 f = Frac(pos * voronoiDensity);
 
             Vector2 res = new Vector2(100f, 0f);
             for (int k = -1; k <= 1; k++)
@@ -40,7 +40,7 @@ namespace Project.Scripts
             return Mathf.Sqrt(res.x);
         }
 
-        public static Vector3 Floor3D(Vector3 vec)
+        public static Vector3 Floor(Vector3 vec)
         {
             return new Vector3(Mathf.Floor(vec.x), Mathf.Floor(vec.y), Mathf.Floor(vec.z));
         }
@@ -50,17 +50,17 @@ namespace Project.Scripts
             return value - Mathf.FloorToInt(value);
         }
 
-        public static Vector3 Frac3D(Vector3 vec)
+        public static Vector3 Frac(Vector3 vec)
         {
             return new Vector3(Frac(vec.x), Frac(vec.y), Frac(vec.z));
         }
 
-        public static Vector3 Multiply3D(Vector3 x, Vector3 y)
+        public static Vector3 Multiply(Vector3 x, Vector3 y)
         {
             return new Vector3(x.x * y.x, x.y * y.y, x.z * y.z);
         }
 
-        public static Vector3 Divide3D(Vector3 x, Vector3 y)
+        public static Vector3 Divide(Vector3 x, Vector3 y)
         {
             return new Vector3(x.x / y.x, x.y / y.y, x.z / y.z);
         }
